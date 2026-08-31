@@ -2,6 +2,8 @@
 import express from "express";
 import cors from "cors";  //Para que el frontend pueda llamar
 import infoRoutes from "./routes/info.routes.js";
+import servicioRoutes from "./routes/servicio.routes.js";
+import empleadoRoutes from "./routes/empleado.routes.js";
 const app = express();
 
 // Middlewares
@@ -10,6 +12,8 @@ app.use(express.json());
 
 // Rutas
 app.use(infoRoutes);
+app.use(servicioRoutes);
+app.use(empleadoRoutes);
 
 // 404
 app.use((req, res) => {
