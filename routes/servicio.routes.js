@@ -12,5 +12,9 @@ import {
 const router = express.Router();
 
 router.post("/servicios", crearServicio);
+router.get("/servicios", obtenerServicios);
+router.get("/servicios/:id", obtenerServicioPorId);
+router.put("/servicios/:id", actualizarServicio);
+router.delete("/servicios/:id", eliminarServicio);
 
 export default router;
