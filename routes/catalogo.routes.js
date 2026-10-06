@@ -4,6 +4,7 @@ import express from "express";
 import {
   crearCatalogo,
   obtenerCatalogos,
+  buscarCatalogos,
   obtenerCatalogoPorId,
   actualizarCatalogo,
   eliminarCatalogo,
@@ -13,6 +14,7 @@ const router = express.Router();
 
 router.post("/catalogo", crearCatalogo);
 router.get("/catalogo", obtenerCatalogos);
+router.get("/catalogo/buscar", buscarCatalogos);
 router.get("/catalogo/:id", obtenerCatalogoPorId);
 router.put("/catalogo/:id", actualizarCatalogo);
 router.delete("/catalogo/:id", eliminarCatalogo);

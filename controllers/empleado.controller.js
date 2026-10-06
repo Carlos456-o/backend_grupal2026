@@ -1,4 +1,5 @@
 import db from "../firebase.js";
+import { filtrarSnapshot, obtenerTerminoBusqueda } from "../utils/busqueda.js";
 
 const empleadosRef = db.collection("empleados");
 
@@ -36,6 +37,21 @@ export const obtenerEmpleados = async (req, res) => {
     res.status(200).json(empleados);
   } catch (error) {
     res.status(500).json({ mensaje: "Error al obtener los empleados.", error: error.message });
+  }
+};
+
+export const buscarEmpleados = async (req, res) => {
+  try {
+    const termino = obtenerTerminoBusqueda(req.query.q);
+    if (!termino) {
+      return res.status(400).json({ mensaje: "Debes enviar un término de búsqueda (parámetro q)." });
+    }
+
+    const snapshot = await empleadosRef.get();
+    res.status(200).json(filtrarSnapshot(snapshot, termino));
+  } catch (error) {
+    console.error("Error al buscar empleados:", error);
+    res.status(500).json({ mensaje: "Error al buscar los empleados.", error: error.message });
   }
 };
 

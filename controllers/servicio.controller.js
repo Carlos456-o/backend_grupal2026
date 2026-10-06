@@ -1,4 +1,5 @@
 import db from "../firebase.js";
+import { filtrarSnapshot, obtenerTerminoBusqueda } from "../utils/busqueda.js";
 
 const serviciosRef = db.collection("servicios");
 
@@ -37,6 +38,21 @@ export const obtenerServicios = async (req, res) => {
     res.status(200).json(servicios);
   } catch (error) {
     res.status(500).json({ mensaje: "Error al obtener los servicios.", error: error.message });
+  }
+};
+
+export const buscarServicios = async (req, res) => {
+  try {
+    const termino = obtenerTerminoBusqueda(req.query.q);
+    if (!termino) {
+      return res.status(400).json({ mensaje: "Debes enviar un término de búsqueda (parámetro q)." });
+    }
+
+    const snapshot = await serviciosRef.get();
+    res.status(200).json(filtrarSnapshot(snapshot, termino));
+  } catch (error) {
+    console.error("Error al buscar servicios:", error);
+    res.status(500).json({ mensaje: "Error al buscar los servicios.", error: error.message });
   }
 };
 
@@ -99,4 +115,3 @@ export const eliminarServicio = async (req, res) => {
     res.status(500).json({ mensaje: "Error al eliminar el servicio.", error: error.message });
   }
 };
-

@@ -4,6 +4,7 @@ import express from "express";
 import {
   crearCliente,
   obtenerClientes,
+  buscarClientes,
   obtenerClientePorId,
   actualizarCliente,
   eliminarCliente,
@@ -15,6 +16,7 @@ const router = express.Router();
 
 router.post("/clientes", crearCliente);
 router.get("/clientes", obtenerClientes);
+router.get("/clientes/buscar", buscarClientes);
 router.get("/clientes/:id", obtenerClientePorId);
 router.put("/clientes/:id", actualizarCliente);
 router.delete("/clientes/:id", eliminarCliente);
