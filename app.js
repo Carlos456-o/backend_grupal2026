@@ -7,6 +7,7 @@ import empleadoRoutes from "./routes/empleado.routes.js";
 import catalogoRoutes from "./routes/catalogo.routes.js";
 import clienteRoutes from "./routes/cliente.routes.js";
 import citaRoutes from "./routes/cita.routes.js";
+import servicioVendidoRoutes from "./routes/servicioVendido.routes.js";
 const app = express();
 
 // Middlewares
@@ -20,6 +21,7 @@ app.use(empleadoRoutes);
 app.use(catalogoRoutes);
 app.use(clienteRoutes);
 app.use(citaRoutes);
+app.use(servicioVendidoRoutes);
 
 // 404
 app.use((req, res) => {
