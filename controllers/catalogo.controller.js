@@ -1,4 +1,5 @@
 import db from "../firebase.js";
+import { filtrarSnapshot, obtenerTerminoBusqueda } from "../utils/busqueda.js";
 
 const catalogoRef = db.collection("catalogo");
 const serviciosRef = db.collection("servicios");
@@ -45,6 +46,21 @@ export const obtenerCatalogos = async (req, res) => {
     res.status(200).json(catalogos);
   } catch (error) {
     res.status(500).json({ mensaje: "Error al obtener los catálogos.", error: error.message });
+  }
+};
+
+export const buscarCatalogos = async (req, res) => {
+  try {
+    const termino = obtenerTerminoBusqueda(req.query.q);
+    if (!termino) {
+      return res.status(400).json({ mensaje: "Debes enviar un término de búsqueda (parámetro q)." });
+    }
+
+    const snapshot = await catalogoRef.get();
+    res.status(200).json(filtrarSnapshot(snapshot, termino));
+  } catch (error) {
+    console.error("Error al buscar catálogos:", error);
+    res.status(500).json({ mensaje: "Error al buscar los catálogos.", error: error.message });
   }
 };
 

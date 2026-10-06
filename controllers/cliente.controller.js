@@ -1,4 +1,5 @@
 import db from "../firebase.js";
+import { filtrarSnapshot, obtenerTerminoBusqueda } from "../utils/busqueda.js";
 
 const clientesRef = db.collection("clientes");
 
@@ -47,6 +48,21 @@ export const obtenerClientes = async (req, res) => {
     res.status(200).json(clientes);
   } catch (error) {
     res.status(500).json({ mensaje: "Error al obtener los clientes.", error: error.message });
+  }
+};
+
+export const buscarClientes = async (req, res) => {
+  try {
+    const termino = obtenerTerminoBusqueda(req.query.q);
+    if (!termino) {
+      return res.status(400).json({ mensaje: "Debes enviar un término de búsqueda (parámetro q)." });
+    }
+
+    const snapshot = await clientesRef.get();
+    res.status(200).json(filtrarSnapshot(snapshot, termino));
+  } catch (error) {
+    console.error("Error al buscar clientes:", error);
+    res.status(500).json({ mensaje: "Error al buscar los clientes.", error: error.message });
   }
 };
 

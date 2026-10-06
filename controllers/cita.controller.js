@@ -1,4 +1,5 @@
 import db from "../firebase.js";
+import { filtrarSnapshot, obtenerTerminoBusqueda } from "../utils/busqueda.js";
 
 const citasRef = db.collection("citas");
 const clientesRef = db.collection("clientes");
@@ -101,6 +102,21 @@ export const obtenerCitas = async (req, res) => {
     res.status(200).json(citas);
   } catch (error) {
     res.status(500).json({ mensaje: "Error al obtener las citas.", error: error.message });
+  }
+};
+
+export const buscarCitas = async (req, res) => {
+  try {
+    const termino = obtenerTerminoBusqueda(req.query.q);
+    if (!termino) {
+      return res.status(400).json({ mensaje: "Debes enviar un término de búsqueda (parámetro q)." });
+    }
+
+    const snapshot = await citasRef.get();
+    res.status(200).json(filtrarSnapshot(snapshot, termino));
+  } catch (error) {
+    console.error("Error al buscar citas:", error);
+    res.status(500).json({ mensaje: "Error al buscar las citas.", error: error.message });
   }
 };
 

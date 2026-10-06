@@ -4,6 +4,7 @@ import express from "express";
 import {
   crearCita,
   obtenerCitas,
+  buscarCitas,
   obtenerCitaPorId,
   actualizarCita,
   eliminarCita,
@@ -13,6 +14,7 @@ const router = express.Router();
 
 router.post("/citas", crearCita);
 router.get("/citas", obtenerCitas);
+router.get("/citas/buscar", buscarCitas);
 router.get("/citas/:id", obtenerCitaPorId);
 router.put("/citas/:id", actualizarCita);
 router.delete("/citas/:id", eliminarCita);
