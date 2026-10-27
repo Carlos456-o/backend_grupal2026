@@ -66,6 +66,59 @@ export const crearUsuario = async (req, res) => {
   }
 };
 
+// Crea un usuario (rol "cliente") por cada cliente que aún no tenga uno.
+// El teléfono del cliente se usa como usuario y como contraseña inicial.
+export const generarUsuariosClientes = async (req, res) => {
+  try {
+    const [clientesSnap, usuariosSnap] = await Promise.all([clientesRef.get(), usuariosRef.get()]);
+
+    const telefonosUsados = new Set(usuariosSnap.docs.map((doc) => doc.data().telefono));
+    const perfilesConUsuario = new Set(
+      usuariosSnap.docs.filter((doc) => doc.data().rol === "cliente").map((doc) => doc.data().perfil_id)
+    );
+
+    const creados = [];
+    const omitidos = [];
+
+    for (const doc of clientesSnap.docs) {
+      const telefono = doc.data().telefono;
+
+      if (!telefono) {
+        omitidos.push({ cliente_id: doc.id, motivo: "El cliente no tiene teléfono." });
+        continue;
+      }
+      if (perfilesConUsuario.has(doc.id)) {
+        omitidos.push({ cliente_id: doc.id, motivo: "El cliente ya tiene un usuario." });
+        continue;
+      }
+      if (telefonosUsados.has(telefono)) {
+        omitidos.push({ cliente_id: doc.id, motivo: `Ya existe un usuario con el teléfono "${telefono}".` });
+        continue;
+      }
+
+      const nuevoUsuario = {
+        telefono,
+        contrasena: await bcrypt.hash(String(telefono), SALT_ROUNDS),
+        rol: "cliente",
+        perfil_id: doc.id,
+        fecha_registro: new Date(),
+      };
+
+      const docRef = await usuariosRef.add(nuevoUsuario);
+      telefonosUsados.add(telefono);
+      creados.push({ id: docRef.id, ...sinContrasena(nuevoUsuario) });
+    }
+
+    res.status(201).json({
+      mensaje: `Se crearon ${creados.length} usuarios para clientes.`,
+      creados,
+      omitidos,
+    });
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al generar los usuarios de clientes.", error: error.message });
+  }
+};
+
 export const obtenerUsuarios = async (req, res) => {
   try {
     const snapshot = await usuariosRef.get();

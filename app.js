@@ -8,6 +8,8 @@ import catalogoRoutes from "./routes/catalogo.routes.js";
 import clienteRoutes from "./routes/cliente.routes.js";
 import citaRoutes from "./routes/cita.routes.js";
 import servicioVendidoRoutes from "./routes/servicioVendido.routes.js";
+import usuarioRoutes from "./routes/usuario.routes.js";
+import exportacionRoutes from "./routes/exportacion.routes.js";
 const app = express();
 
 // Middlewares
@@ -22,6 +24,8 @@ app.use(catalogoRoutes);
 app.use(clienteRoutes);
 app.use(citaRoutes);
 app.use(servicioVendidoRoutes);
+app.use(usuarioRoutes);
+app.use(exportacionRoutes);
 
 // 404
 app.use((req, res) => {

@@ -3,6 +3,7 @@ import express from "express";
 
 import {
   crearUsuario,
+  generarUsuariosClientes,
   obtenerUsuarios,
   buscarUsuarios,
   obtenerUsuarioPorId,
@@ -14,6 +15,7 @@ import {
 const router = express.Router();
 
 router.post("/usuarios", crearUsuario);
+router.post("/usuarios/generar-clientes", generarUsuariosClientes);
 router.get("/usuarios", obtenerUsuarios);
 router.get("/usuarios/buscar", buscarUsuarios);
 router.get("/usuarios/:id", obtenerUsuarioPorId);
