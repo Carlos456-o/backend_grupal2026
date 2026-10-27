@@ -13,7 +13,6 @@
   "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",
-    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "exceljs": "^4.4.0",
