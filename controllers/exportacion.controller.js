@@ -3,7 +3,8 @@ import PDFDocument from "pdfkit";
 import archiver from "archiver";
 import db from "../firebase.js";
 import { calcularEstadisticas } from "./estadisticas.controller.js";
-import { citasACsvOlap } from "../utils/olap.js";
+import { respaldoACsvsOlap } from "../utils/olap.js";
+import { leerRespaldo } from "../utils/respaldo.js";
 
 const clientesRef = db.collection("clientes");
 
@@ -432,29 +433,33 @@ export const exportarCsvColeccion = async (req, res) => {
 };
 
 // ===================================================================
-// GET /csv/olap -> Citas.csv para el cubo OLAP en Pentaho (carpeta datos/).
-// Una fila por cita, separador ";", fechas dd/MM/yyyy y sin vacíos.
-// La lógica de cada fila está en utils/olap.js.
+// GET /csv/olap -> ZIP con los CSV del cubo OLAP en Pentaho (carpeta datos/).
+// Lee el respaldo completo de la base (todas las colecciones) y arma
+// Citas.csv (hechos) + un CSV por colección. Separador ";", fechas
+// dd/MM/yyyy y sin vacíos. La lógica está en utils/olap.js.
 // ===================================================================
 export const exportarCsvOlap = async (req, res) => {
   try {
-    const [citasSnap, clientesSnap, empleadosSnap, serviciosSnap] = await Promise.all(
-      ["citas", "clientes", "empleados", "servicios"].map((nombre) => db.collection(nombre).get())
-    );
-    const aMapa = (snap) => new Map(snap.docs.map((d) => [d.id, d.data()]));
-    const { csv, total, omitidas } = citasACsvOlap(
-      citasSnap.docs.map((d) => ({ id: d.id, ...d.data() })),
-      { clientes: aMapa(clientesSnap), empleados: aMapa(empleadosSnap), servicios: aMapa(serviciosSnap) }
-    );
+    const respaldo = await leerRespaldo(db);
+    const { archivos, citasSinFecha } = respaldoACsvsOlap(respaldo);
 
-    res.setHeader("Content-Type", "text/csv; charset=utf-8");
-    res.setHeader("Content-Disposition", 'attachment; filename="Citas.csv"');
-    res.setHeader("X-Filas", String(total));
-    res.setHeader("X-Citas-Sin-Fecha", String(omitidas));
-    res.send(csv);
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader("Content-Disposition", `attachment; filename="olap_divino_nino_${fechaHoy()}.zip"`);
+    res.setHeader("X-Archivos", String(archivos.length));
+    res.setHeader("X-Citas-Sin-Fecha", String(citasSinFecha));
+
+    const zip = archiver("zip", { zlib: { level: 9 } });
+    zip.on("error", (error) => {
+      console.error("Error al armar el ZIP del cubo:", error);
+      res.end();
+    });
+    zip.pipe(res);
+    archivos.forEach(({ nombre, csv }) => zip.append(csv, { name: nombre }));
+    await zip.finalize();
   } catch (error) {
     console.error("Error al exportar el CSV del cubo:", error);
-    res.status(500).json({ mensaje: "Error al generar el CSV del cubo.", error: error.message });
+    if (!res.headersSent) res.status(500).json({ mensaje: "Error al generar el CSV del cubo.", error: error.message });
+    else res.end();
   }
 };
 
