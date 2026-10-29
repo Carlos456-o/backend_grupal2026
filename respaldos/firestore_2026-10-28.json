@@ -1,0 +1,980 @@
+{
+  "catalogo": [
+    {
+      "id": "6CM5dTw31UUeutOF831O",
+      "nombre": "Lavado de Motor",
+      "descripcion": "Catálogo del servicio Lavado de Motor",
+      "servicio": "Lavado de Motor"
+    },
+    {
+      "id": "AdU1HnvQ2S4VsyVVgpr9",
+      "nombre": "Lavado de Moto",
+      "descripcion": "Catálogo del servicio Lavado de Moto",
+      "servicio": "Lavado de Moto"
+    },
+    {
+      "id": "JHvnlm1wzjWba907ZBNr",
+      "nombre": "Desinfección Interior",
+      "descripcion": "Catálogo del servicio Desinfección Interior",
+      "servicio": "Desinfección Interior"
+    },
+    {
+      "id": "SSEQPqeDQB7LF6BAxHAG",
+      "nombre": "Lavado Básico",
+      "descripcion": "Catálogo del servicio Lavado Básico",
+      "servicio": "Lavado Básico"
+    },
+    {
+      "id": "Yx7k5Nvr8itFvckB8XGv",
+      "nombre": "Encerado",
+      "descripcion": "Catálogo del servicio Encerado",
+      "servicio": "Encerado"
+    },
+    {
+      "id": "goyq2hh0SEk44jRCed0c",
+      "nombre": "Lavado de Tapicería",
+      "descripcion": "Catálogo del servicio Lavado de Tapicería",
+      "servicio": "Lavado de Tapicería"
+    },
+    {
+      "id": "vsb9ihUy5S32ydwmlXyh",
+      "nombre": "Lavado Completo",
+      "descripcion": "Catálogo del servicio Lavado Completo",
+      "servicio": "Lavado Completo"
+    },
+    {
+      "id": "yJiGt65hy6xk2n7fEP27",
+      "nombre": "Polichado",
+      "descripcion": "Catálogo del servicio Polichado",
+      "servicio": "Polichado"
+    }
+  ],
+  "citas": [
+    {
+      "id": "1a1sUfdtWHbqomq9dSN1",
+      "cliente_id": "yeUrwyLplhKMdU4i4iW1",
+      "vehiculo": {
+        "placa": "PQR678",
+        "modelo": "Hyundai Accent"
+      },
+      "servicio": {
+        "id": "anzZFVlDjK1EHrrQHuW0",
+        "nombre": "Lavado Completo",
+        "precio": 35000
+      },
+      "empleado_id": "JQU0tHhsgq6ZixZQkhM6",
+      "fecha": "2026-10-01T00:00:00.000Z",
+      "hora": "08:30",
+      "estado": "terminado",
+      "solicitud_especial": ""
+    },
+    {
+      "id": "2CfgjftMeBMpFYU8oAxY",
+      "cliente_id": "ITRHBjXZnyCdwfCZkSlE",
+      "vehiculo": {
+        "placa": "BCD890",
+        "modelo": "Volkswagen Gol"
+      },
+      "servicio": {
+        "id": "ZYeQcpup4LzDSeBvVDYu",
+        "nombre": "Encerado",
+        "precio": 50000
+      },
+      "empleado_id": "JQU0tHhsgq6ZixZQkhM6",
+      "fecha": "2026-10-08T00:00:00.000Z",
+      "hora": "11:30",
+      "estado": "confirmada",
+      "solicitud_especial": ""
+    },
+    {
+      "id": "5HTOuOebSR3ZVAyn5xlG",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "empleado_id": null,
+      "fecha": "2026-10-27T00:00:00.000Z",
+      "hora": "09:00",
+      "estado": "pendiente",
+      "servicio": {
+        "id": "oHO2vtoXoWKgQFviXQmz",
+        "nombre": "Desinfección Interior",
+        "precio": 300
+      },
+      "descuento": null,
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "solicitud_especial": "",
+      "pasos": []
+    },
+    {
+      "id": "5wOSZWPJdWBM5dqTd517",
+      "cliente_id": "KmPmoErwNxXC59OLd1Lm",
+      "vehiculo": {
+        "placa": "GHI789",
+        "modelo": "Renault Logan"
+      },
+      "servicio": {
+        "id": "ZYeQcpup4LzDSeBvVDYu",
+        "nombre": "Encerado",
+        "precio": 50000
+      },
+      "empleado_id": "uc0cYRS4iQfSsJGJ7Jho",
+      "fecha": "2026-09-23T00:00:00.000Z",
+      "hora": "11:00",
+      "solicitud_especial": "",
+      "estado": "terminado"
+    },
+    {
+      "id": "7vjvwQz9Dwciy0oi2uqc",
+      "cliente_id": "derXJpJE9V7AepvmCjM5",
+      "vehiculo": {
+        "placa": "VWX234",
+        "modelo": "Honda CB190"
+      },
+      "servicio": {
+        "id": "kuzULAuULI8heteWYy0c",
+        "nombre": "Lavado de Moto",
+        "precio": 15000
+      },
+      "empleado_id": "Hbp5sLA2NK9y0iALMkiu",
+      "fecha": "2026-10-03T00:00:00.000Z",
+      "hora": "15:00",
+      "estado": "terminado",
+      "solicitud_especial": ""
+    },
+    {
+      "id": "HYqyq9L1cXHrM6vyIQBI",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "fecha": "2026-10-21T00:00:00.000Z",
+      "hora": "14:00",
+      "servicio": {
+        "id": "oHO2vtoXoWKgQFviXQmz",
+        "nombre": "Desinfección Interior",
+        "precio": 300
+      },
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "solicitud_especial": "Saf",
+      "empleado_id": "OTFAr28fYcExWJIDE6u5",
+      "pasos": [
+        {
+          "nombre": "ozono",
+          "hecho": true,
+          "hora": "12:02"
+        },
+        {
+          "nombre": "limpieza de tablero",
+          "hecho": true,
+          "hora": "12:02"
+        },
+        {
+          "nombre": "limpieza de vidrios",
+          "hecho": true,
+          "hora": "12:02"
+        }
+      ],
+      "estado": "terminado",
+      "calificacion": {
+        "estrellas": 5,
+        "comentario": "Hhaha",
+        "fecha": "2026-10-20T18:02:31.165Z"
+      },
+      "aviso_listo_visto": true
+    },
+    {
+      "id": "M6RbIAEvsC5wHzvWUdQG",
+      "cliente_id": "5IjuYbvEMjr1LhO5BH4N",
+      "empleado_id": null,
+      "fecha": "2026-10-26T00:00:00.000Z",
+      "hora": "10:30",
+      "estado": "pendiente",
+      "servicio": {
+        "id": "F2ohgnRoCQC3mhj3tmfh",
+        "nombre": "Polichado",
+        "precio": 600
+      },
+      "vehiculo": {
+        "placa": "1234",
+        "modelo": "Mazda rx7"
+      },
+      "solicitud_especial": "",
+      "pasos": []
+    },
+    {
+      "id": "PcGClqID3FFuBLYSj76O",
+      "cliente_id": "derXJpJE9V7AepvmCjM5",
+      "vehiculo": {
+        "placa": "STU901",
+        "modelo": "Suzuki Swift"
+      },
+      "servicio": {
+        "id": "oHO2vtoXoWKgQFviXQmz",
+        "nombre": "Desinfección Interior",
+        "precio": 30000
+      },
+      "empleado_id": "SYnNagBAKFUt3dqoKW7s",
+      "fecha": "2026-10-02T00:00:00.000Z",
+      "hora": "10:00",
+      "estado": "terminado",
+      "solicitud_especial": "Hay una silla de bebé en el asiento trasero"
+    },
+    {
+      "id": "R5T3FcSzbAunKOVAgg5Y",
+      "cliente_id": "MH2sMkaa8na22Ytikd3o",
+      "vehiculo": {
+        "placa": "YZA567",
+        "modelo": "Ford Fiesta"
+      },
+      "servicio": {
+        "id": "E34I2JsNrW2mcUU3N92o",
+        "nombre": "Lavado de Tapicería",
+        "precio": 45000
+      },
+      "empleado_id": "eg8wF1sLsOEfRb3q8ANh",
+      "fecha": "2026-10-04T00:00:00.000Z",
+      "hora": "09:00",
+      "estado": "terminado",
+      "solicitud_especial": "Mancha de café en el asiento del conductor"
+    },
+    {
+      "id": "TwAW9aqX6M9f53ezBOkN",
+      "cliente_id": "sGdKVlvfBzB23XVK3113",
+      "vehiculo": {
+        "placa": "M11223",
+        "modelo": "Yamaha FZ150"
+      },
+      "servicio": {
+        "id": "kuzULAuULI8heteWYy0c",
+        "nombre": "Lavado de Moto",
+        "precio": 15000
+      },
+      "empleado_id": "SYnNagBAKFUt3dqoKW7s",
+      "fecha": "2026-10-09T00:00:00.000Z",
+      "hora": "16:30",
+      "estado": "pendiente",
+      "solicitud_especial": ""
+    },
+    {
+      "id": "YQtEno1K1NnWeeyrR08B",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "empleado_id": null,
+      "fecha": "2026-10-26T00:00:00.000Z",
+      "hora": "11:00",
+      "estado": "pendiente",
+      "servicio": {
+        "id": "yxUTAYePCDzAbVjn1POb",
+        "nombre": "Lavado Básico",
+        "precio": 200
+      },
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "solicitud_especial": "",
+      "pasos": []
+    },
+    {
+      "id": "dF0AFgAPIs2eq2utFqbt",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "fecha": "2026-10-27T00:00:00.000Z",
+      "hora": "10:30",
+      "servicio": {
+        "id": "ZYeQcpup4LzDSeBvVDYu",
+        "nombre": "Encerado",
+        "precio": 150
+      },
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "solicitud_especial": "Su papá",
+      "empleado_id": "Hbp5sLA2NK9y0iALMkiu",
+      "pasos": [
+        {
+          "nombre": "encerado",
+          "hecho": true,
+          "hora": "10:31"
+        },
+        {
+          "nombre": "brillado",
+          "hecho": true,
+          "hora": "10:31"
+        }
+      ],
+      "estado": "terminado",
+      "calificacion": {
+        "estrellas": 5,
+        "comentario": "Jajsgd",
+        "fecha": "2026-10-27T16:31:31.195Z"
+      },
+      "aviso_listo_visto": true
+    },
+    {
+      "id": "e3UHkuUbWrqzeTCNhRXl",
+      "cliente_id": "MH2sMkaa8na22Ytikd3o",
+      "vehiculo": {
+        "placa": "YZA567",
+        "modelo": "Ford Fiesta"
+      },
+      "servicio": {
+        "id": "F2ohgnRoCQC3mhj3tmfh",
+        "nombre": "Polichado",
+        "precio": 60000
+      },
+      "empleado_id": "PoGTuux7KZU7fQaT7vAN",
+      "fecha": "2026-10-10T00:00:00.000Z",
+      "hora": "13:00",
+      "estado": "pendiente",
+      "solicitud_especial": "Rayón en la puerta derecha"
+    },
+    {
+      "id": "g7vmpHh6HtKco4uAxptF",
+      "cliente_id": "0mSDpORYDjvbWHfC9F3V",
+      "vehiculo": {
+        "placa": "MNO345",
+        "modelo": "Toyota Corolla"
+      },
+      "servicio": {
+        "id": "F2ohgnRoCQC3mhj3tmfh",
+        "nombre": "Polichado",
+        "precio": 60000
+      },
+      "empleado_id": "PoGTuux7KZU7fQaT7vAN",
+      "fecha": "2026-09-24T00:00:00.000Z",
+      "hora": "16:00",
+      "solicitud_especial": "",
+      "estado": "terminado"
+    },
+    {
+      "id": "gyeMFrDccF3mgIBK0bGC",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "empleado_id": null,
+      "fecha": "2026-10-22T00:00:00.000Z",
+      "hora": "09:00",
+      "estado": "pendiente",
+      "servicio": {
+        "id": "oHO2vtoXoWKgQFviXQmz",
+        "nombre": "Desinfección Interior",
+        "precio": 300
+      },
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "solicitud_especial": "",
+      "pasos": []
+    },
+    {
+      "id": "pgb6bvWCtyTsUGzTY2c6",
+      "cliente_id": "B1NWNLUP8mB6ca1lS5tg",
+      "vehiculo": {
+        "placa": "ABC123",
+        "modelo": "Mazda 3"
+      },
+      "servicio": {
+        "id": "yxUTAYePCDzAbVjn1POb",
+        "nombre": "Lavado Básico",
+        "precio": 20000
+      },
+      "empleado_id": "PoGTuux7KZU7fQaT7vAN",
+      "fecha": "2026-09-22T00:00:00.000Z",
+      "hora": "09:00",
+      "solicitud_especial": "",
+      "estado": "terminado"
+    },
+    {
+      "id": "qTn0mvtYIu1my5Ku4eIr",
+      "cliente_id": "lw6RP0cjwo3qyGHNZJ25",
+      "vehiculo": {
+        "placa": "DEF456",
+        "modelo": "Chevrolet Spark"
+      },
+      "servicio": {
+        "id": "anzZFVlDjK1EHrrQHuW0",
+        "nombre": "Lavado Completo",
+        "precio": 35000
+      },
+      "empleado_id": "eg8wF1sLsOEfRb3q8ANh",
+      "fecha": "2026-09-22T00:00:00.000Z",
+      "hora": "10:30",
+      "estado": "pendiente",
+      "solicitud_especial": "Cuidado con los rines"
+    },
+    {
+      "id": "qpwXSVnmCmDVaWjBh8h8",
+      "cliente_id": "ATA3DhTZ88FmGfOPTXx6",
+      "vehiculo": {
+        "placa": "JKL012",
+        "modelo": "Kia Picanto"
+      },
+      "servicio": {
+        "id": "zdPrGLjqehTYlcVFgFiM",
+        "nombre": "Lavado de Motor",
+        "precio": 25000
+      },
+      "empleado_id": "Hbp5sLA2NK9y0iALMkiu",
+      "fecha": "2026-09-23T00:00:00.000Z",
+      "hora": "14:00",
+      "estado": "pendiente",
+      "solicitud_especial": "Tiene fuga de aceite"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "0mSDpORYDjvbWHfC9F3V",
+      "nombre": "Luis Martínez",
+      "telefono": "3005556677",
+      "email": "luis.martinez@mail.com",
+      "vehiculos": [
+        {
+          "placa": "MNO345",
+          "modelo": "Toyota Corolla"
+        }
+      ],
+      "fecha_registro": "2026-09-21T14:51:44.515Z"
+    },
+    {
+      "id": "5IjuYbvEMjr1LhO5BH4N",
+      "nombre": "Vily Vargas",
+      "telefono": "88982838",
+      "email": "vily05dominic23@gmail.com",
+      "fecha_registro": "2026-10-14T16:42:58.787Z",
+      "vehiculos": [
+        {
+          "placa": "1234",
+          "modelo": "Mazda rx7"
+        }
+      ]
+    },
+    {
+      "id": "ATA3DhTZ88FmGfOPTXx6",
+      "nombre": "Ana Torres",
+      "telefono": "3004445566",
+      "email": "ana.torres@mail.com",
+      "vehiculos": [
+        {
+          "placa": "JKL012",
+          "modelo": "Kia Picanto"
+        }
+      ],
+      "fecha_registro": "2026-09-21T14:51:44.310Z"
+    },
+    {
+      "id": "B1NWNLUP8mB6ca1lS5tg",
+      "nombre": "Juan Pérez",
+      "telefono": "3001112233",
+      "email": "juan.perez@mail.com",
+      "vehiculos": [
+        {
+          "placa": "ABC123",
+          "modelo": "Mazda 3"
+        }
+      ],
+      "fecha_registro": "2026-09-21T14:51:42.419Z"
+    },
+    {
+      "id": "ITRHBjXZnyCdwfCZkSlE",
+      "nombre": "Daniela Ortiz",
+      "telefono": "3009990011",
+      "email": "daniela.ortiz@mail.com",
+      "vehiculos": [
+        {
+          "placa": "BCD890",
+          "modelo": "Volkswagen Gol"
+        }
+      ],
+      "fecha_registro": "2026-10-06T15:32:41.621Z"
+    },
+    {
+      "id": "KmPmoErwNxXC59OLd1Lm",
+      "nombre": "Carlos Ruiz",
+      "telefono": "3003334455",
+      "email": "carlos.ruiz@mail.com",
+      "vehiculos": [
+        {
+          "placa": "GHI789",
+          "modelo": "Renault Logan"
+        }
+      ],
+      "fecha_registro": "2026-09-21T14:51:43.599Z"
+    },
+    {
+      "id": "MH2sMkaa8na22Ytikd3o",
+      "nombre": "Felipe Castaño",
+      "telefono": "3008889900",
+      "email": "felipe.castano@mail.com",
+      "vehiculos": [
+        {
+          "placa": "YZA567",
+          "modelo": "Ford Fiesta"
+        }
+      ],
+      "fecha_registro": "2026-10-06T15:32:41.114Z"
+    },
+    {
+      "id": "V7Z4VxJ0msf9spzJDVFj",
+      "nombre": "Carlos Porta burgos",
+      "telefono": "87273682",
+      "email": "carlosoporta456@gmail.com",
+      "vehiculos": [],
+      "fecha_registro": "2026-10-27T15:19:56.050Z"
+    },
+    {
+      "id": "derXJpJE9V7AepvmCjM5",
+      "nombre": "Paula Rincón",
+      "telefono": "3007778899",
+      "email": "paula.rincon@mail.com",
+      "vehiculos": [
+        {
+          "placa": "STU901",
+          "modelo": "Suzuki Swift"
+        },
+        {
+          "placa": "VWX234",
+          "modelo": "Honda CB190"
+        }
+      ],
+      "fecha_registro": "2026-10-06T15:32:40.605Z"
+    },
+    {
+      "id": "lw6RP0cjwo3qyGHNZJ25",
+      "nombre": "María Gómez",
+      "telefono": "3002223344",
+      "email": "maria.gomez@mail.com",
+      "vehiculos": [
+        {
+          "placa": "DEF456",
+          "modelo": "Chevrolet Spark"
+        }
+      ],
+      "fecha_registro": "2026-09-21T14:51:43.067Z"
+    },
+    {
+      "id": "sGdKVlvfBzB23XVK3113",
+      "vehiculos": [
+        {
+          "placa": "M67890",
+          "modelo": "Nissan Sentra 2020"
+        },
+        {
+          "placa": "M11223",
+          "modelo": "Yamaha FZ150"
+        }
+      ],
+      "fecha_registro": "2026-09-29T17:57:29.211Z",
+      "telefono": "8363-7755",
+      "nombre": "Enzo Alonzo",
+      "email": "Enzo.mao@example.com"
+    },
+    {
+      "id": "yeUrwyLplhKMdU4i4iW1",
+      "nombre": "Sergio Molina",
+      "telefono": "3006667788",
+      "email": "sergio.molina@mail.com",
+      "vehiculos": [
+        {
+          "placa": "PQR678",
+          "modelo": "Hyundai Accent"
+        }
+      ],
+      "fecha_registro": "2026-10-06T15:32:40.118Z"
+    }
+  ],
+  "empleados": [
+    {
+      "id": "Hbp5sLA2NK9y0iALMkiu",
+      "nombre": "Diego Herrera",
+      "telefono": "3105556677",
+      "rol": "lavador",
+      "correo": "3105556677@sin-correo.divinonino.app"
+    },
+    {
+      "id": "JQU0tHhsgq6ZixZQkhM6",
+      "nombre": "Andrés Morales",
+      "telefono": "3106667788",
+      "rol": "lavador"
+    },
+    {
+      "id": "OTFAr28fYcExWJIDE6u5",
+      "nombre": "Camila Vargas",
+      "telefono": "3108889900",
+      "rol": "recepcionista"
+    },
+    {
+      "id": "PoGTuux7KZU7fQaT7vAN",
+      "nombre": "Pedro Sánchez",
+      "telefono": "3101112233",
+      "rol": "lavador"
+    },
+    {
+      "id": "SYnNagBAKFUt3dqoKW7s",
+      "nombre": "Valentina Rojas",
+      "telefono": "3107778899",
+      "rol": "lavador"
+    },
+    {
+      "id": "eg8wF1sLsOEfRb3q8ANh",
+      "nombre": "Laura Díaz",
+      "telefono": "3102223344",
+      "rol": "lavador"
+    },
+    {
+      "id": "lj1VPlLfDCuIAUJ1JOaK",
+      "nombre": "Sofía Castro",
+      "telefono": "3104445566",
+      "rol": "cajero"
+    },
+    {
+      "id": "uc0cYRS4iQfSsJGJ7Jho",
+      "nombre": "Jorge Ramírez",
+      "telefono": "3103334455",
+      "rol": "supervisor",
+      "correo": "3103334455@sin-correo.divinonino.app"
+    }
+  ],
+  "servicio_vendidos": [
+    {
+      "id": "CHQEAcXQGX1oNjO6QZ3G",
+      "cita_id": "5wOSZWPJdWBM5dqTd517",
+      "estado": "terminado",
+      "valoracion": "5",
+      "comentario": "Excelente servicio, el carro quedó impecable.",
+      "fecha_registro": "2026-10-06T15:31:21.891Z"
+    },
+    {
+      "id": "SAl6jLdSMAqFfIsXoQU7",
+      "cita_id": "R5T3FcSzbAunKOVAgg5Y",
+      "estado": "terminado",
+      "valoracion": "3",
+      "comentario": "Quitaron casi toda la mancha, pero tardaron más de lo indicado.",
+      "fecha_registro": "2026-10-06T15:32:46.415Z"
+    },
+    {
+      "id": "VHuzclNp1WiDF2VvPLSS",
+      "cita_id": "g7vmpHh6HtKco4uAxptF",
+      "estado": "terminado",
+      "valoracion": "4",
+      "comentario": "Muy buen trabajo, solo tardaron un poco más de lo esperado.",
+      "fecha_registro": "2026-10-06T15:31:22.253Z"
+    },
+    {
+      "id": "VP6iuRK7l5gRRf1GKx4S",
+      "cita_id": "pgb6bvWCtyTsUGzTY2c6",
+      "estado": "terminado",
+      "valoracion": "5",
+      "comentario": "Atención rápida y amable, volveré pronto.",
+      "fecha_registro": "2026-10-06T15:31:22.601Z"
+    },
+    {
+      "id": "YBHjHXT28W6uTbXFMltQ",
+      "cita_id": "PcGClqID3FFuBLYSj76O",
+      "estado": "terminado",
+      "valoracion": "4",
+      "comentario": "Buen servicio de desinfección, el olor desapareció por completo.",
+      "fecha_registro": "2026-10-06T15:32:44.170Z"
+    },
+    {
+      "id": "v2XIYsFb7l9vMyhXLoT3",
+      "cita_id": "7vjvwQz9Dwciy0oi2uqc",
+      "estado": "terminado",
+      "valoracion": "5",
+      "comentario": "La moto quedó brillante y la cadena limpia.",
+      "fecha_registro": "2026-10-06T15:32:45.309Z"
+    },
+    {
+      "id": "xCAeYiuIT6iRlXg1EfJc",
+      "cita_id": "1a1sUfdtWHbqomq9dSN1",
+      "estado": "terminado",
+      "valoracion": "5",
+      "comentario": "El interior quedó como nuevo, muy recomendados.",
+      "fecha_registro": "2026-10-06T15:32:43.089Z"
+    }
+  ],
+  "servicios": [
+    {
+      "id": "E34I2JsNrW2mcUU3N92o",
+      "nombre": "Lavado de Tapicería",
+      "descripcion": "Limpieza profunda de asientos y alfombras con máquina de inyección.",
+      "duracion_min": 120,
+      "actividades_incluidas": [
+        "aspirado",
+        "lavado de asientos",
+        "lavado de alfombras",
+        "secado"
+      ],
+      "precio": 450
+    },
+    {
+      "id": "F2ohgnRoCQC3mhj3tmfh",
+      "nombre": "Polichado",
+      "descripcion": "Pulido de pintura para eliminar rayones leves.",
+      "duracion_min": 90,
+      "actividades_incluidas": [
+        "pulido",
+        "brillado",
+        "encerado"
+      ],
+      "precio": 600
+    },
+    {
+      "id": "ZYeQcpup4LzDSeBvVDYu",
+      "nombre": "Encerado",
+      "descripcion": "Aplicación de cera protectora en la carrocería.",
+      "duracion_min": 45,
+      "actividades_incluidas": [
+        "encerado",
+        "brillado"
+      ],
+      "precio": 150
+    },
+    {
+      "id": "anzZFVlDjK1EHrrQHuW0",
+      "nombre": "Lavado Completo",
+      "descripcion": "Lavado interior y exterior con aspirado.",
+      "duracion_min": 60,
+      "actividades_incluidas": [
+        "lavado exterior",
+        "aspirado",
+        "limpieza de vidrios"
+      ],
+      "precio": 350
+    },
+    {
+      "id": "kuzULAuULI8heteWYy0c",
+      "nombre": "Lavado de Moto",
+      "descripcion": "Lavado exterior de motocicleta con desengrasado de cadena.",
+      "duracion_min": 25,
+      "actividades_incluidas": [
+        "lavado exterior",
+        "desengrasado de cadena",
+        "secado"
+      ],
+      "precio": 500
+    },
+    {
+      "id": "oHO2vtoXoWKgQFviXQmz",
+      "nombre": "Desinfección Interior",
+      "descripcion": "Desinfección de cabina con ozono y limpieza de superficies.",
+      "duracion_min": 45,
+      "actividades_incluidas": [
+        "ozono",
+        "limpieza de tablero",
+        "limpieza de vidrios"
+      ],
+      "precio": 300
+    },
+    {
+      "id": "yxUTAYePCDzAbVjn1POb",
+      "nombre": "Lavado Básico",
+      "descripcion": "Lavado exterior con jabón y agua a presión.",
+      "duracion_min": 30,
+      "actividades_incluidas": [
+        "lavado exterior",
+        "secado"
+      ],
+      "precio": 200
+    },
+    {
+      "id": "zdPrGLjqehTYlcVFgFiM",
+      "nombre": "Lavado de Motor",
+      "descripcion": "Limpieza especializada del compartimento del motor.",
+      "duracion_min": 40,
+      "actividades_incluidas": [
+        "desengrasado",
+        "secado de motor"
+      ],
+      "precio": 250
+    }
+  ],
+  "telefonos": [
+    {
+      "id": "3001112233",
+      "correo": "juan.perez@mail.com",
+      "uid": "u90EyGKoAKM1GWKNWxtBaSyBSpT2"
+    },
+    {
+      "id": "3002223344",
+      "correo": "maria.gomez@mail.com",
+      "uid": "9Xqn7jMkuuQ39hDOtMJqR2x4J7F3"
+    },
+    {
+      "id": "3003334455",
+      "correo": "carlos.ruiz@mail.com",
+      "uid": "AwxMlDNKq9bP1eeDk2imQF8glKA2"
+    },
+    {
+      "id": "3004445566",
+      "correo": "ana.torres@mail.com",
+      "uid": "4W6iWzcfXjUkn5vnwmiWPHUKOMG2"
+    },
+    {
+      "id": "3005556677",
+      "correo": "luis.martinez@mail.com",
+      "uid": "97fnnO2zzadnsWE0Hym42iJlL5q2"
+    },
+    {
+      "id": "3006667788",
+      "correo": "sergio.molina@mail.com",
+      "uid": "jVf6xTZ1IzLdq7zpVBJ6Fq2ewJW2"
+    },
+    {
+      "id": "3007778899",
+      "correo": "paula.rincon@mail.com",
+      "uid": "O6sNoLpnTpUBzZG64mtmdZ2Cae73"
+    },
+    {
+      "id": "3008889900",
+      "correo": "felipe.castano@mail.com",
+      "uid": "gckHQTXX7MTFkJdO2uZ1YSWFA8s2"
+    },
+    {
+      "id": "3009990011",
+      "correo": "daniela.ortiz@mail.com",
+      "uid": "LdhrrbZL3MQmZlwayc9lNVo3YgL2"
+    },
+    {
+      "id": "3103334455",
+      "correo": "elcalus456@gmail.com",
+      "uid": "RNS7lgLbDTe3EAFFanGIz14kBqc2"
+    },
+    {
+      "id": "3105556677",
+      "correo": "3105556677@sin-correo.divinonino.app",
+      "uid": "RM6x6AykPOULxX9HMYxtkTBMUQ32",
+      "correo_pendiente": "grupounan2@gmail.com"
+    },
+    {
+      "id": "83637755",
+      "correo": "enzo.mao@example.com",
+      "uid": "CMRstR3DVoNrmIP9QXjRPgkHKEz2"
+    },
+    {
+      "id": "87273682",
+      "correo": "carlosoporta456@gmail.com",
+      "uid": "rUoNNTCwrbcOdaIycA0mRp0yMzP2"
+    },
+    {
+      "id": "88982838",
+      "correo": "vily05dominic23@gmail.com",
+      "uid": "KdgWTREC0zebkNmJLMVuZNClMNn1"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "4W6iWzcfXjUkn5vnwmiWPHUKOMG2",
+      "telefono": "3004445566",
+      "correo": "ana.torres@mail.com",
+      "rol": "cliente",
+      "perfil_id": "ATA3DhTZ88FmGfOPTXx6",
+      "fecha_registro": "2026-10-13T16:28:17.056Z"
+    },
+    {
+      "id": "97fnnO2zzadnsWE0Hym42iJlL5q2",
+      "telefono": "3005556677",
+      "correo": "luis.martinez@mail.com",
+      "rol": "cliente",
+      "perfil_id": "0mSDpORYDjvbWHfC9F3V",
+      "fecha_registro": "2026-10-13T16:28:16.796Z"
+    },
+    {
+      "id": "9Xqn7jMkuuQ39hDOtMJqR2x4J7F3",
+      "telefono": "3002223344",
+      "correo": "maria.gomez@mail.com",
+      "rol": "cliente",
+      "perfil_id": "lw6RP0cjwo3qyGHNZJ25",
+      "fecha_registro": "2026-10-13T16:28:18.293Z"
+    },
+    {
+      "id": "AwxMlDNKq9bP1eeDk2imQF8glKA2",
+      "telefono": "3003334455",
+      "correo": "carlos.ruiz@mail.com",
+      "rol": "cliente",
+      "perfil_id": "KmPmoErwNxXC59OLd1Lm",
+      "fecha_registro": "2026-10-13T16:28:17.520Z"
+    },
+    {
+      "id": "CMRstR3DVoNrmIP9QXjRPgkHKEz2",
+      "telefono": "83637755",
+      "correo": "enzo.mao@example.com",
+      "rol": "cliente",
+      "perfil_id": "sGdKVlvfBzB23XVK3113",
+      "fecha_registro": "2026-10-13T16:28:18.511Z"
+    },
+    {
+      "id": "KdgWTREC0zebkNmJLMVuZNClMNn1",
+      "telefono": "88982838",
+      "correo": "vily05dominic23@gmail.com",
+      "rol": "cliente",
+      "perfil_id": "5IjuYbvEMjr1LhO5BH4N",
+      "fecha_registro": "2026-10-14T16:42:58.787Z"
+    },
+    {
+      "id": "LdhrrbZL3MQmZlwayc9lNVo3YgL2",
+      "telefono": "3009990011",
+      "correo": "daniela.ortiz@mail.com",
+      "rol": "cliente",
+      "perfil_id": "ITRHBjXZnyCdwfCZkSlE",
+      "fecha_registro": "2026-10-13T16:28:17.281Z"
+    },
+    {
+      "id": "O6sNoLpnTpUBzZG64mtmdZ2Cae73",
+      "telefono": "3007778899",
+      "correo": "paula.rincon@mail.com",
+      "rol": "cliente",
+      "perfil_id": "derXJpJE9V7AepvmCjM5",
+      "fecha_registro": "2026-10-13T16:28:18.052Z"
+    },
+    {
+      "id": "RM6x6AykPOULxX9HMYxtkTBMUQ32",
+      "telefono": "3105556677",
+      "correo": "3105556677@sin-correo.divinonino.app",
+      "rol": "empleado",
+      "perfil_id": "Hbp5sLA2NK9y0iALMkiu",
+      "fecha_registro": "2026-09-21T14:54:42.020Z",
+      "correo_pendiente": "grupounan2@gmail.com"
+    },
+    {
+      "id": "RNS7lgLbDTe3EAFFanGIz14kBqc2",
+      "telefono": "3103334455",
+      "rol": "administrador",
+      "perfil_id": "uc0cYRS4iQfSsJGJ7Jho",
+      "fecha_registro": "2026-09-21T14:54:42.066Z",
+      "correo_pendiente": null,
+      "correo": "elcalus456@gmail.com"
+    },
+    {
+      "id": "gckHQTXX7MTFkJdO2uZ1YSWFA8s2",
+      "telefono": "3008889900",
+      "correo": "felipe.castano@mail.com",
+      "rol": "cliente",
+      "perfil_id": "MH2sMkaa8na22Ytikd3o",
+      "fecha_registro": "2026-10-13T16:28:17.832Z"
+    },
+    {
+      "id": "jVf6xTZ1IzLdq7zpVBJ6Fq2ewJW2",
+      "telefono": "3006667788",
+      "correo": "sergio.molina@mail.com",
+      "rol": "cliente",
+      "perfil_id": "yeUrwyLplhKMdU4i4iW1",
+      "fecha_registro": "2026-10-13T16:28:18.742Z"
+    },
+    {
+      "id": "rUoNNTCwrbcOdaIycA0mRp0yMzP2",
+      "telefono": "87273682",
+      "correo": "carlosoporta456@gmail.com",
+      "rol": "cliente",
+      "perfil_id": "V7Z4VxJ0msf9spzJDVFj",
+      "fecha_registro": "2026-10-27T15:19:56.050Z"
+    },
+    {
+      "id": "u90EyGKoAKM1GWKNWxtBaSyBSpT2",
+      "telefono": "3001112233",
+      "correo": "juan.perez@mail.com",
+      "rol": "cliente",
+      "perfil_id": "B1NWNLUP8mB6ca1lS5tg",
+      "fecha_registro": "2026-09-21T14:51:50.955Z"
+    }
+  ]
+}

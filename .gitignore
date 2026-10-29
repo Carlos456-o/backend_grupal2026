@@ -2,5 +2,3 @@ node_modules
 .env
 
 # Respaldos de la base de datos (tienen datos personales)
-respaldos/
-scripts/
