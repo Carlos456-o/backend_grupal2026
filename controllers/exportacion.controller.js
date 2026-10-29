@@ -1,5 +1,6 @@
 import ExcelJS from "exceljs";
 import PDFDocument from "pdfkit";
+import archiver from "archiver";
 import db from "../firebase.js";
 import { calcularEstadisticas } from "./estadisticas.controller.js";
 
@@ -352,6 +353,103 @@ export const exportarPdf = async (req, res) => {
   } catch (error) {
     console.error("Error al generar el PDF:", error);
     if (!res.headersSent) res.status(500).json({ mensaje: "Error al generar el PDF.", error: error.message });
+    else res.end();
+  }
+};
+
+// ===================================================================
+// GET /csv            -> ZIP con un CSV por cada colección
+// GET /csv/:coleccion -> CSV de una sola colección
+// Columnas = todos los campos que aparecen en los documentos.
+// ===================================================================
+
+const COLECCIONES_CSV = [
+  "clientes",
+  "empleados",
+  "servicios",
+  "catalogo",
+  "citas",
+  "servicio_vendidos",
+  "usuarios",
+];
+
+// Campos que nunca se exportan
+const CAMPOS_EXCLUIDOS = ["contrasena"];
+
+// BOM para que Excel lea bien las tildes y la ñ
+const BOM = "\uFEFF";
+
+// Convierte cualquier valor de Firestore en texto para una celda
+const valorCsv = (valor) => {
+  if (valor === null || valor === undefined) return "";
+  if (valor?.toDate) return valor.toDate().toISOString(); // Timestamp
+  if (valor instanceof Date) return valor.toISOString();
+  if (valor?.path && valor?.firestore) return valor.path; // DocumentReference
+  if (typeof valor === "object") return JSON.stringify(valor); // arreglos y mapas
+  return String(valor);
+};
+
+// Comillas si el texto tiene coma, comillas o saltos de línea
+const escaparCsv = (texto) => (/[",\r\n]/.test(texto) ? `"${texto.replace(/"/g, '""')}"` : texto);
+
+const coleccionACsv = async (nombre) => {
+  const snapshot = await db.collection(nombre).get();
+  const filas = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+  const columnas = ["id"];
+  filas.forEach((fila) =>
+    Object.keys(fila).forEach((campo) => {
+      if (!columnas.includes(campo) && !CAMPOS_EXCLUIDOS.includes(campo)) columnas.push(campo);
+    })
+  );
+
+  const lineas = [
+    columnas.map(escaparCsv).join(","),
+    ...filas.map((fila) => columnas.map((c) => escaparCsv(valorCsv(fila[c]))).join(",")),
+  ];
+
+  return BOM + lineas.join("\r\n");
+};
+
+export const exportarCsvColeccion = async (req, res) => {
+  try {
+    const { coleccion } = req.params;
+    if (!COLECCIONES_CSV.includes(coleccion)) {
+      return res.status(404).json({
+        mensaje: `Colección no válida. Usa una de: ${COLECCIONES_CSV.join(", ")}.`,
+      });
+    }
+
+    const csv = await coleccionACsv(coleccion);
+    res.setHeader("Content-Type", "text/csv; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="${coleccion}_${fechaHoy()}.csv"`);
+    res.send(csv);
+  } catch (error) {
+    console.error("Error al exportar CSV:", error);
+    res.status(500).json({ mensaje: "Error al generar el CSV.", error: error.message });
+  }
+};
+
+export const exportarCsvTodo = async (req, res) => {
+  try {
+    const archivos = await Promise.all(
+      COLECCIONES_CSV.map(async (nombre) => ({ nombre, csv: await coleccionACsv(nombre) }))
+    );
+
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader("Content-Disposition", `attachment; filename="datos_divino_nino_${fechaHoy()}.zip"`);
+
+    const zip = archiver("zip", { zlib: { level: 9 } });
+    zip.on("error", (error) => {
+      console.error("Error al armar el ZIP:", error);
+      res.end();
+    });
+    zip.pipe(res);
+    archivos.forEach(({ nombre, csv }) => zip.append(csv, { name: `${nombre}.csv` }));
+    await zip.finalize();
+  } catch (error) {
+    console.error("Error al exportar CSV:", error);
+    if (!res.headersSent) res.status(500).json({ mensaje: "Error al generar los CSV.", error: error.message });
     else res.end();
   }
 };
